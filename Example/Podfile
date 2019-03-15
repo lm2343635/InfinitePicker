@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RxInfinitePicker_Example' do
+  pod 'RxInfinitePicker', :path => '../'
+
+  target 'RxInfinitePicker_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
