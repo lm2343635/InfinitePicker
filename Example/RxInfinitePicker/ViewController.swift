@@ -7,10 +7,20 @@
 //
 
 import UIKit
+import RxInfinitePicker
+import SnapKit
+import RxSwift
 
 class ViewController: UIViewController {
     
+    private lazy var picker: RxInfinitePicker = {
+        let picker = RxInfinitePicker()
+        picker.backgroundColor = .lightGray
+        return picker
+    }()
+    
     private let viewModel: ViewModel
+    private let disposeBag = DisposeBag()
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -24,6 +34,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .white
+        view.addSubview(picker)
+        createConstraints()
+        
+        viewModel.items.bind(to: picker.items).disposed(by: disposeBag)
+    }
+    
+    private func createConstraints() {
+        picker.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.size.equalTo(CGSize(width: 100, height: 200))
+        }
     }
 
 }

@@ -1,17 +1,14 @@
 //
-//  ViewModel.swift
+//  PickerCell.swift
 //  RxInfinitePicker_Example
 //
 //  Created by Meng Li on 2019/03/15.
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import RxSwift
+import RxInfinitePicker
 
-class ViewModel {
+class NumberPickerCell: RxInfinitePickerCell {
     
-    var items: Observable<[Int]> {
-        return Observable.just(Array(1 ... 10))
-    }
     
 }

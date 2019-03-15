@@ -1,30 +1,50 @@
 PODS:
   - CocoaProxy (0.1.1)
-  - InfiniteLayout (0.2.3.4):
-    - CocoaProxy (~> 0)
-    - InfiniteLayout/Core (= 0.2.3.4)
+  - Differentiator (3.1.0)
   - InfiniteLayout/Core (0.2.3.4):
     - CocoaProxy (~> 0)
+  - InfiniteLayout/Rx (0.2.3.4):
+    - CocoaProxy (~> 0)
+    - InfiniteLayout/Core (~> 0)
+    - RxCocoa (~> 4)
+    - RxDataSources (~> 3)
+    - RxSwift (~> 4)
+  - Reusable (4.0.5):
+    - Reusable/Storyboard (= 4.0.5)
+    - Reusable/View (= 4.0.5)
+  - Reusable/Storyboard (4.0.5)
+  - Reusable/View (4.0.5)
   - RxAtomic (4.4.2)
   - RxCocoa (4.4.2):
     - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxDataSources (3.1.0):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - RxInfinitePicker (0.1.0):
-    - InfiniteLayout (~> 0.2)
+    - InfiniteLayout/Rx (~> 0.2)
+    - Reusable
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - RxCocoa
   - RxInfinitePicker (from `../`)
   - RxSwift
+  - SnapKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CocoaProxy
+    - Differentiator
     - InfiniteLayout
+    - Reusable
     - RxAtomic
     - RxCocoa
+    - RxDataSources
     - RxSwift
+    - SnapKit
 
 EXTERNAL SOURCES:
   RxInfinitePicker:
@@ -32,12 +52,16 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CocoaProxy: 35ab81e24325b33834cffe45a3d1fd48ca67ef3a
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   InfiniteLayout: 0a2d22c0d7c12051468b1bd1763875285f2e6815
+  Reusable: 188be1a54ac0691bc66e5bb24ec6eb91971b315b
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
-  RxInfinitePicker: 1ca0002554340763a68bfff4e97e45977fd393ad
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxInfinitePicker: 37def0faef21b345442604de7aa77527f7ba2171
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: b92d92ba998d7b891cae94b4fbbb6640cefe12ca
+PODFILE CHECKSUM: 0c561c1500ca1e7addcf6d5e0ce4dbb53972092f
 
 COCOAPODS: 1.6.1

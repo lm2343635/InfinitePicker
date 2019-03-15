@@ -26,11 +26,11 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'lm2343635' => 'lm2343635@126.com' }
   s.source           = { :git => 'https://github.com/lm2343635/RxInfinitePicker.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'RxInfinitePicker/Classes/**/*'
   
-  s.dependency 'InfiniteLayout', '~> 0.2'
+  s.dependency 'InfiniteLayout/Rx', '~> 0.2'
+  s.dependency 'Reusable'
 end
