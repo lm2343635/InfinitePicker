@@ -1,16 +1,43 @@
 PODS:
-  - RxInfinitePicker (0.1.0)
+  - CocoaProxy (0.1.1)
+  - InfiniteLayout (0.2.3.4):
+    - CocoaProxy (~> 0)
+    - InfiniteLayout/Core (= 0.2.3.4)
+  - InfiniteLayout/Core (0.2.3.4):
+    - CocoaProxy (~> 0)
+  - RxAtomic (4.4.2)
+  - RxCocoa (4.4.2):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxInfinitePicker (0.1.0):
+    - InfiniteLayout (~> 0.2)
+  - RxSwift (4.4.2):
+    - RxAtomic (>= 4.4.2, ~> 4.4)
 
 DEPENDENCIES:
+  - RxCocoa
   - RxInfinitePicker (from `../`)
+  - RxSwift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CocoaProxy
+    - InfiniteLayout
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
 
 EXTERNAL SOURCES:
   RxInfinitePicker:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RxInfinitePicker: 0ab94fe26d4814b6cd7b48cee2a948c79a22e238
+  CocoaProxy: 35ab81e24325b33834cffe45a3d1fd48ca67ef3a
+  InfiniteLayout: 0a2d22c0d7c12051468b1bd1763875285f2e6815
+  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
+  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
+  RxInfinitePicker: 1ca0002554340763a68bfff4e97e45977fd393ad
+  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
 
-PODFILE CHECKSUM: 07ba36f49a240c17aadbc24508a25b3dead4b099
+PODFILE CHECKSUM: b92d92ba998d7b891cae94b4fbbb6640cefe12ca
 
 COCOAPODS: 1.6.1
