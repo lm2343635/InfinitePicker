@@ -1,0 +1,16 @@
+PODS:
+  - RxInfinitePicker (0.1.0)
+
+DEPENDENCIES:
+  - RxInfinitePicker (from `../`)
+
+EXTERNAL SOURCES:
+  RxInfinitePicker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RxInfinitePicker: 0ab94fe26d4814b6cd7b48cee2a948c79a22e238
+
+PODFILE CHECKSUM: 07ba36f49a240c17aadbc24508a25b3dead4b099
+
+COCOAPODS: 1.6.1
