@@ -7,11 +7,14 @@
 //
 
 import RxSwift
+import RxCocoa
 
 class ViewModel {
     
-    var items: Observable<[Int]> {
-        return Observable.just(Array(1 ... 10))
+    let items = BehaviorRelay<[Int]>(value: Array(1 ... 10))
+    
+    func pick(at index: Int) {
+        print("itemSelected at \(index)")
     }
     
 }
