@@ -5,11 +5,10 @@ import Reusable
 import RxSwift
 import RxCocoa
 
-
-
 public class RxInfinitePicker: UIView {
     
-    private var itemSize: CGSize
+    private let itemSize: CGSize
+    private let scrollDirection: UICollectionView.ScrollDirection
     
     private lazy var collectionView: RxInfiniteCollectionView = {
         let collectionView = RxInfiniteCollectionView(frame: .zero, collectionViewLayout: {
@@ -18,7 +17,7 @@ public class RxInfinitePicker: UIView {
             layout.minimumInteritemSpacing = 0
             layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             layout.itemSize = itemSize
-            layout.scrollDirection = .vertical
+            layout.scrollDirection = scrollDirection
             return layout
         }())
         collectionView.backgroundColor = .clear
@@ -26,11 +25,15 @@ public class RxInfinitePicker: UIView {
         collectionView.isItemPagingEnabled = true
         collectionView.register(cellType: LabelPickerCell.self)
         collectionView.rx.itemSelected.bind { [unowned self] in
-            self.itemSelected.onNext($0.row)
-            collectionView.scrollToItem(at: $0, at: .centeredVertically, animated: true)
+            switch self.scrollDirection {
+            case .vertical:
+                collectionView.scrollToItem(at: $0, at: .centeredVertically, animated: true)
+            case .horizontal:
+                collectionView.scrollToItem(at: $0, at: .centeredHorizontally, animated: true)
+            }
         }.disposed(by: disposeBag)
         collectionView.rx.itemCentered.filter { $0 != nil }.map { $0! }.skip(1).bind { [unowned self] in
-            self.itemSelected.onNext($0.row)
+            self.pick(at: $0.row)
         }.disposed(by: disposeBag)
         return collectionView
     }()
@@ -41,15 +44,16 @@ public class RxInfinitePicker: UIView {
         return cell
     })
     
-    public let items = PublishSubject<[Int]>()
+    public let items = BehaviorRelay<[Int]>(value: [])
     public let itemSelected = BehaviorSubject<Int>(value: 0)
     
     private let disposeBag = DisposeBag()
     
-    public init(frame: CGRect = .zero, itemSize: CGSize) {
+    public init(frame: CGRect = .zero, itemSize: CGSize, scrollDirection: UICollectionView.ScrollDirection) {
         self.itemSize = itemSize
+        self.scrollDirection = scrollDirection
         super.init(frame: frame)
-        
+
         addSubview(collectionView)
         createConstraints()
         
@@ -72,4 +76,11 @@ public class RxInfinitePicker: UIView {
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
+    private func pick(at index: Int) {
+        let itemIndex = index % items.value.count
+        guard 0 ..< items.value.count ~= itemIndex else {
+            return
+        }
+        itemSelected.onNext(items.value[itemIndex])
+    }
 }

@@ -14,7 +14,7 @@ import RxSwift
 class ViewController: UIViewController {
     
     private lazy var picker: RxInfinitePicker = {
-        let picker = RxInfinitePicker(itemSize: CGSize(width: 100, height: 50))
+        let picker = RxInfinitePicker(itemSize: CGSize(width: 100, height: 50), scrollDirection: .vertical)
         picker.backgroundColor = .lightGray
         picker.itemSelected.subscribe(onNext: { [unowned self] in
             self.viewModel.pick(at: $0)
