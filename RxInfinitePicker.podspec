@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxInfinitePicker'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of RxInfinitePicker.'
+  s.version          = '0.1'
+  s.summary          = 'An iOS infinite picker based on RxSwift.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+RxInfinitePicker is an iOS infinite picker based on RxSwift, it helps you to create a infinite picker using a customized cell.
                        DESC
 
   s.homepage         = 'https://github.com/lm2343635/RxInfinitePicker'
