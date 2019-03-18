@@ -8,7 +8,7 @@
 
 import RxInfinitePicker
 
-class NumberPickerCell: RxInfinitePickerCell {
+class NumberPickerCell: RxInfinitePickerCell<Int> {
     
     
 }

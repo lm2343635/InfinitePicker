@@ -13,8 +13,9 @@ class ViewModel {
     
     let items = BehaviorRelay<[Int]>(value: Array(1 ... 10))
     
-    func pick(at index: Int) {
-        print("itemSelected at \(index)")
+    var itemsString: Observable<[String]> {
+        return items.map { $0.map { String($0) } }
     }
     
+
 }

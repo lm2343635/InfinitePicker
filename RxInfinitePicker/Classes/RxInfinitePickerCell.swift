@@ -1,12 +1,11 @@
 
 import UIKit
-import Reusable
 
-open class RxInfinitePickerCell: UICollectionViewCell, Reusable {
-    
+open class RxInfinitePickerCell<Model>: UICollectionViewCell {
+    var model: Model?
 }
 
-public class LabelPickerCell: RxInfinitePickerCell {
+public class LabelPickerCell: RxInfinitePickerCell<String> {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -33,8 +32,11 @@ public class LabelPickerCell: RxInfinitePickerCell {
         titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
-    var title: String? {
+    override var model: String? {
         didSet {
+            guard let title = model else {
+                return
+            }
             titleLabel.text = title
         }
     }

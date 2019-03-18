@@ -32,5 +32,4 @@ TODO: Add long description of the pod here.
   s.source_files = 'RxInfinitePicker/Classes/**/*'
   
   s.dependency 'InfiniteLayout/Rx', '~> 0.2'
-  s.dependency 'Reusable'
 end
