@@ -11,7 +11,7 @@ import RxCocoa
 
 class ViewModel {
     
-    let items = BehaviorRelay<[Int]>(value: Array(1 ... 10))
+    let items = BehaviorRelay<[Int]>(value: Array(1 ... 9))
     
     var itemsString: Observable<[String]> {
         return items.map { $0.map { String($0) } }

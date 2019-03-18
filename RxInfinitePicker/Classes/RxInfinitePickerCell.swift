@@ -2,8 +2,7 @@
 import UIKit
 
 open class RxInfinitePickerCell<Model>: UICollectionViewCell {
-    var model: Model?
-    var isCentered: Bool = false
+    open var model: Model?
 }
 
 public class LabelPickerCell: RxInfinitePickerCell<String> {
@@ -33,7 +32,7 @@ public class LabelPickerCell: RxInfinitePickerCell<String> {
         titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
-    override var model: String? {
+    public override var model: String? {
         didSet {
             guard let title = model else {
                 return

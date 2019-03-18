@@ -20,12 +20,14 @@ PODS:
     - InfiniteLayout/Rx (~> 0.2)
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
+  - ShapeView (0.4.2)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - RxCocoa
   - RxInfinitePicker (from `../`)
   - RxSwift
+  - ShapeView
   - SnapKit
 
 SPEC REPOS:
@@ -37,6 +39,7 @@ SPEC REPOS:
     - RxCocoa
     - RxDataSources
     - RxSwift
+    - ShapeView
     - SnapKit
 
 EXTERNAL SOURCES:
@@ -52,8 +55,9 @@ SPEC CHECKSUMS:
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxInfinitePicker: 85dedf9eb3e88b192737b7ea973de291b4a28eb0
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
+  ShapeView: 6be862212ffe328d2ca968a61968ed5e104fabba
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 0c561c1500ca1e7addcf6d5e0ce4dbb53972092f
+PODFILE CHECKSUM: 6250b7571cda8f3e40a2085cf79d555271086cee
 
 COCOAPODS: 1.6.1

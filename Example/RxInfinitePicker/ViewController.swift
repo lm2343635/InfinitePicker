@@ -13,9 +13,25 @@ import RxSwift
 
 class ViewController: UIViewController {
     
-    private lazy var picker: RxInfinitePicker<String> = {
-        let picker = RxInfinitePicker<String>(itemSize: CGSize(width: 100, height: 50), scrollDirection: .vertical, cellType: LabelPickerCell.self)
+    private lazy var labelPicker: RxInfinitePicker<String> = {
+        let picker = RxInfinitePicker<String>(
+            itemSize: CGSize(width: 100, height: 50),
+            scrollDirection: .vertical,
+            cellType: LabelPickerCell.self
+        )
         picker.backgroundColor = .lightGray
+        picker.itemSelected.subscribe(onNext: { [unowned self] in
+            print("itemSelected \($0)")
+        }).disposed(by: disposeBag)
+        return picker
+    }()
+    
+    private lazy var numberPicker: RxInfinitePicker<Int> = {
+        let picker = RxInfinitePicker<Int>(
+            itemSize: CGSize(width: 50, height: 50),
+            scrollDirection: .vertical,
+            cellType: NumberPickerCell.self
+        )
         picker.itemSelected.subscribe(onNext: { [unowned self] in
             print("itemSelected \($0)")
         }).disposed(by: disposeBag)
@@ -38,17 +54,28 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-        view.addSubview(picker)
+        view.addSubview(labelPicker)
+        view.addSubview(numberPicker)
         createConstraints()
         
-        viewModel.itemsString.bind(to: picker.items).disposed(by: disposeBag)
+        viewModel.itemsString.bind(to: labelPicker.items).disposed(by: disposeBag)
+        viewModel.items.bind(to: numberPicker.items).disposed(by: disposeBag)
     }
     
     private func createConstraints() {
-        picker.snp.makeConstraints {
-            $0.center.equalToSuperview()
+        
+        labelPicker.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(100)
+            $0.centerX.equalToSuperview()
             $0.size.equalTo(CGSize(width: 100, height: 200))
         }
+        
+        numberPicker.snp.makeConstraints {
+            $0.top.equalTo(labelPicker.snp.bottom).offset(20)
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(CGSize(width: 50, height: 200))
+        }
+        
     }
 
 }

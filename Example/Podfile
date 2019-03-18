@@ -6,6 +6,7 @@ target 'RxInfinitePicker_Example' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SnapKit'
+  pod 'ShapeView'
 
   target 'RxInfinitePicker_Tests' do
     inherit! :search_paths
