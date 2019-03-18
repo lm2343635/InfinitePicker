@@ -3,6 +3,7 @@ import UIKit
 
 open class RxInfinitePickerCell<Model>: UICollectionViewCell {
     var model: Model?
+    var isCentered: Bool = false
 }
 
 public class LabelPickerCell: RxInfinitePickerCell<String> {
@@ -38,6 +39,12 @@ public class LabelPickerCell: RxInfinitePickerCell<String> {
                 return
             }
             titleLabel.text = title
+        }
+    }
+    
+    public override var isSelected: Bool {
+        didSet {
+            titleLabel.textColor = isSelected ? .blue : .darkGray
         }
     }
     

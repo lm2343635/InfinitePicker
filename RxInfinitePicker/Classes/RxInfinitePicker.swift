@@ -4,6 +4,10 @@ import InfiniteLayout
 import RxSwift
 import RxCocoa
 
+fileprivate struct Const {
+    static let pickerCellIdentider = "RxInfinitePicker.CellIdentider"
+}
+
 public class RxInfinitePicker<Model>: UIView {
     
     private let itemSize: CGSize
@@ -23,7 +27,7 @@ public class RxInfinitePicker<Model>: UIView {
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isItemPagingEnabled = true
-        collectionView.register(cellType, forCellWithReuseIdentifier: "id")
+        collectionView.register(cellType, forCellWithReuseIdentifier: Const.pickerCellIdentider)
         collectionView.rx.itemSelected.bind { [unowned self] in
             switch self.scrollDirection {
             case .vertical:
@@ -39,7 +43,7 @@ public class RxInfinitePicker<Model>: UIView {
     }()
     
     private lazy var dataSource = InfiniteCollectionViewSingleSectionDataSource<Model>(configureCell: { (_, collectionView, indexPath, model) in
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "id", for: indexPath) as? RxInfinitePickerCell<Model> else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.pickerCellIdentider, for: indexPath) as? RxInfinitePickerCell<Model> else {
             return UICollectionViewCell()
         }
         cell.model = model
@@ -47,7 +51,13 @@ public class RxInfinitePicker<Model>: UIView {
     })
     
     public let items = BehaviorRelay<[Model]>(value: [])
-    public let itemSelected = PublishSubject<Model>()
+    public let indexSelected = BehaviorRelay<Int>(value: 0)
+    
+    public var itemSelected: Observable<Model> {
+        return Observable.combineLatest(items, indexSelected).filter {
+            0 ..< $0.0.count ~= $0.1
+        }.map { $0.0[$0.1] }
+    }
     
     private let disposeBag = DisposeBag()
     
@@ -69,7 +79,6 @@ public class RxInfinitePicker<Model>: UIView {
             .asDriver(onErrorJustReturn: [])
             .drive(collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -89,6 +98,7 @@ public class RxInfinitePicker<Model>: UIView {
         guard 0 ..< items.value.count ~= itemIndex else {
             return
         }
-        itemSelected.onNext(items.value[itemIndex])
+        indexSelected.accept(itemIndex)
     }
+    
 }
