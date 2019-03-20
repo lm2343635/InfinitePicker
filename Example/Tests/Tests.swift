@@ -1,5 +1,5 @@
 import XCTest
-import RxInfinitePicker
+import InfinitePicker
 
 class Tests: XCTestCase {
     

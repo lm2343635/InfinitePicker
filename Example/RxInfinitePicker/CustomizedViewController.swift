@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RxInfinitePicker
+import InfinitePicker
 import SnapKit
 import RxSwift
 
@@ -19,11 +19,6 @@ class CustomizedViewController: UIViewController {
             scrollDirection: .vertical,
             cellType: NumberPickerCell.self
         )
-        /*
-        picker.itemSelected.subscribe(onNext: { [unowned self] in
-            print("itemSelected \($0)")
-        }).disposed(by: disposeBag)
- */
         picker.delegate = self
         return picker
     }()

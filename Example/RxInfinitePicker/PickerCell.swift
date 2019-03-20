@@ -6,7 +6,7 @@
 //  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
-import RxInfinitePicker
+import InfinitePicker
 import ShapeView
 
 fileprivate extension UIColor {
