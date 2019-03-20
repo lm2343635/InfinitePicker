@@ -18,6 +18,8 @@ public class InfinitePicker<Model>: UIView, UICollectionViewDataSource, UICollec
     private let scrollDirection: UICollectionView.ScrollDirection
     private let cellType: InfinitePickerCell<Model>.Type
     
+    private var currentIndex = 0
+    
     private lazy var collectionView: InfiniteCollectionView = {
         let collectionView = InfiniteCollectionView(frame: .zero, collectionViewLayout: {
             let layout = UICollectionViewFlowLayout()
@@ -35,19 +37,6 @@ public class InfinitePicker<Model>: UIView, UICollectionViewDataSource, UICollec
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.infiniteDelegate = self
-        /**
-        collectionView.rx.itemSelected.bind { [unowned self] in
-            switch self.scrollDirection {
-            case .vertical:
-                collectionView.scrollToItem(at: $0, at: .centeredVertically, animated: true)
-            case .horizontal:
-                collectionView.scrollToItem(at: $0, at: .centeredHorizontally, animated: true)
-            }
-        }.disposed(by: disposeBag)
-        collectionView.rx.itemCentered.filter { $0 != nil }.map { $0! }.skip(1).bind { [unowned self] in
-            self.pick(at: $0.row)
-        }.disposed(by: disposeBag)
- */
         return collectionView
     }()
     
@@ -86,11 +75,21 @@ public class InfinitePicker<Model>: UIView, UICollectionViewDataSource, UICollec
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
+    private var scrollPosition: UICollectionView.ScrollPosition {
+        switch scrollDirection {
+        case .vertical:
+            return .centeredVertically
+        case .horizontal:
+            return .centeredHorizontally
+        }
+    }
+    
     public func pick(at index: Int) {
         guard 0 ..< items.count ~= index else {
             return
         }
-        collectionView.selectItem(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .centeredVertically)
+        let indexPath = IndexPath(row: currentIndex - currentIndex % items.count + index, section: 0)
+        collectionView.selectItem(at: indexPath, animated: true, scrollPosition: scrollPosition)
     }
     
     // MARK: UICollectionViewDataSource
@@ -113,12 +112,7 @@ public class InfinitePicker<Model>: UIView, UICollectionViewDataSource, UICollec
     
     // MARK: UICollectionViewDelegate
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch scrollDirection {
-        case .vertical:
-            collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
-        case .horizontal:
-            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
+        collectionView.scrollToItem(at: indexPath, at: scrollPosition, animated: true)
     }
     
     //  MARK: InfiniteCollectionViewDelegate
@@ -126,6 +120,7 @@ public class InfinitePicker<Model>: UIView, UICollectionViewDataSource, UICollec
         guard let indexPath = centeredIndexPath else {
             return
         }
+        currentIndex = indexPath.row
         delegate?.didSelectItem(at: collectionView.indexPath(from: indexPath).row)
     }
     
