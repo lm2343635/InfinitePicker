@@ -12,6 +12,7 @@ import RxCocoa
 class ViewModel {
     
     let items = BehaviorRelay<[Int]>(value: Array(1 ... 9))
+    let selectedIndex = BehaviorRelay<Int>(value: 0)
     
     var itemsString: Observable<[String]> {
         return items.map { $0.map { String($0) } }

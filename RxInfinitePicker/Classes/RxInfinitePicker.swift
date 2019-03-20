@@ -8,14 +8,18 @@ fileprivate struct Const {
     static let pickerCellIdentider = "RxInfinitePicker.CellIdentider"
 }
 
-public class RxInfinitePicker<Model>: UIView {
-    
+public protocol RxInfinitePickerDelegate: class {
+    func didSelectItem(at index: Int)
+}
+
+public class RxInfinitePicker<Model>: UIView, UICollectionViewDataSource, UICollectionViewDelegate, InfiniteCollectionViewDelegate {
+
     private let itemSize: CGSize
     private let scrollDirection: UICollectionView.ScrollDirection
     private let cellType: RxInfinitePickerCell<Model>.Type
     
-    private lazy var collectionView: RxInfiniteCollectionView = {
-        let collectionView = RxInfiniteCollectionView(frame: .zero, collectionViewLayout: {
+    private lazy var collectionView: InfiniteCollectionView = {
+        let collectionView = InfiniteCollectionView(frame: .zero, collectionViewLayout: {
             let layout = UICollectionViewFlowLayout()
             layout.minimumLineSpacing = 0
             layout.minimumInteritemSpacing = 0
@@ -28,6 +32,10 @@ public class RxInfinitePicker<Model>: UIView {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isItemPagingEnabled = true
         collectionView.register(cellType, forCellWithReuseIdentifier: Const.pickerCellIdentider)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.infiniteDelegate = self
+        /**
         collectionView.rx.itemSelected.bind { [unowned self] in
             switch self.scrollDirection {
             case .vertical:
@@ -39,27 +47,17 @@ public class RxInfinitePicker<Model>: UIView {
         collectionView.rx.itemCentered.filter { $0 != nil }.map { $0! }.skip(1).bind { [unowned self] in
             self.pick(at: $0.row)
         }.disposed(by: disposeBag)
+ */
         return collectionView
     }()
     
-    private lazy var dataSource = InfiniteCollectionViewSingleSectionDataSource<Model>(configureCell: { (_, collectionView, indexPath, model) in
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.pickerCellIdentider, for: indexPath) as? RxInfinitePickerCell<Model> else {
-            return UICollectionViewCell()
+    public var items: [Model] = [] {
+        didSet {
+            collectionView.reloadData()
         }
-        cell.model = model
-        return cell
-    })
-    
-    public let items = BehaviorRelay<[Model]>(value: [])
-    public let indexSelected = BehaviorRelay<Int>(value: 0)
-    
-    public var itemSelected: Observable<Model> {
-        return Observable.combineLatest(items, indexSelected).filter {
-            0 ..< $0.0.count ~= $0.1
-        }.map { $0.0[$0.1] }
     }
     
-    private let disposeBag = DisposeBag()
+    public weak var delegate: RxInfinitePickerDelegate?
     
     public init(
         frame: CGRect = .zero,
@@ -74,11 +72,6 @@ public class RxInfinitePicker<Model>: UIView {
 
         addSubview(collectionView)
         createConstraints()
-        
-        items.map { SingleSection.create($0) }
-            .asDriver(onErrorJustReturn: [])
-            .drive(collectionView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -93,12 +86,40 @@ public class RxInfinitePicker<Model>: UIView {
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
-    private func pick(at index: Int) {
-        let itemIndex = index % items.value.count
-        guard 0 ..< items.value.count ~= itemIndex else {
+    // UICollectionViewDataSource
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let index = self.collectionView.indexPath(from: indexPath).row
+        guard
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.pickerCellIdentider, for: indexPath) as? RxInfinitePickerCell<Model>,
+            0 ..< items.count ~= index
+            
+        else {
+            return UICollectionViewCell()
+        }
+        cell.model = items[index]
+        return cell
+    }
+    
+    // UICollectionViewDelegate
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch scrollDirection {
+        case .vertical:
+            collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
+        case .horizontal:
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    // InfiniteCollectionViewDelegate
+    public func infiniteCollectionView(_ infiniteCollectionView: InfiniteCollectionView, didChangeCenteredIndexPath centeredIndexPath: IndexPath?) {
+        guard let indexPath = centeredIndexPath else {
             return
         }
-        indexSelected.accept(itemIndex)
+        delegate?.didSelectItem(at: collectionView.indexPath(from: indexPath).row)
     }
     
 }
