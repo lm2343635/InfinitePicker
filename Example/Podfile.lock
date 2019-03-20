@@ -5,11 +5,9 @@ PODS:
     - InfiniteLayout/Core (= 0.2.3.4)
   - InfiniteLayout/Core (0.2.3.4):
     - CocoaProxy (~> 0)
-  - InfinitePicker (0.1):
+  - InfinitePicker/Rx (0.1):
     - InfiniteLayout (~> 0.2)
-    - InfinitePicker/Core (= 0.1)
-  - InfinitePicker/Core (0.1):
-    - InfiniteLayout (~> 0.2)
+    - RxCocoa (~> 4.2)
   - RxAtomic (4.4.2)
   - RxCocoa (4.4.2):
     - RxSwift (>= 4.4.2, ~> 4.4)
@@ -19,7 +17,7 @@ PODS:
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
-  - InfinitePicker (from `../`)
+  - InfinitePicker/Rx (from `../`)
   - RxCocoa
   - RxSwift
   - ShapeView
@@ -49,6 +47,6 @@ SPEC CHECKSUMS:
   ShapeView: 6be862212ffe328d2ca968a61968ed5e104fabba
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: b49a31fe7b45089cf30c9f7bc629b59b1c6d6561
+PODFILE CHECKSUM: 32142409b6277675f8437dc349dad551162bf380
 
 COCOAPODS: 1.6.1

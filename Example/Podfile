@@ -2,7 +2,7 @@ use_frameworks!
 platform :ios, '9.0'
 
 target 'RxInfinitePicker_Example' do
-  pod 'InfinitePicker', :path => '../'
+  pod 'InfinitePicker/Rx', :path => '../'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SnapKit'

@@ -57,6 +57,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="FdG-dK-Nm4" kind="push" id="PEX-hp-enf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -118,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ptd-aE-Qg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="727" y="-135"/>
+            <point key="canvasLocation" x="846" y="-387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YJp-77-yKk">
@@ -135,6 +138,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ozV-jL-e1n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1231" y="-135"/>
+        </scene>
+        <!--Rx-->
+        <scene sceneID="KrZ-9B-LAe">
+            <objects>
+                <viewController id="FdG-dK-Nm4" customClass="CustomizedViewController" customModule="RxInfinitePicker_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ofo-E8-o1y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9Vd-6d-ffP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rx" id="3Il-Is-lZN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bwT-N6-jK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="296"/>
         </scene>
     </scenes>
 </document>

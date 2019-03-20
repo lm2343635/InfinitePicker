@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  RxViewModel.swift
 //  RxInfinitePicker_Example
 //
 //  Created by Meng Li on 2019/03/15.
@@ -9,7 +9,7 @@
 import RxSwift
 import RxCocoa
 
-class ViewModel {
+class RxViewModel {
     
     let items = BehaviorRelay<[Int]>(value: Array(1 ... 9))
     let selectedIndex = BehaviorRelay<Int>(value: 0)
