@@ -47,7 +47,7 @@ fileprivate struct Const {
     
 }
 
-class NumberPickerCell: RxInfinitePickerCell<Int> {
+class NumberPickerCell: InfinitePickerCell<Int> {
     
     private lazy var numberLabel: UILabel = {
         let label = UILabel()

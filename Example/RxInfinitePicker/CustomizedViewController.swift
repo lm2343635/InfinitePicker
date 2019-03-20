@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CustomizedViewController.swift
 //  RxInfinitePicker
 //
 //  Created by Meng Li on 03/15/2019.
@@ -11,10 +11,10 @@ import RxInfinitePicker
 import SnapKit
 import RxSwift
 
-class ViewController: UIViewController {
+class CustomizedViewController: UIViewController {
 
-    private lazy var numberPicker: RxInfinitePicker<Int> = {
-        let picker = RxInfinitePicker<Int>(
+    private lazy var numberPicker: InfinitePicker<Int> = {
+        let picker = InfinitePicker<Int>(
             itemSize: CGSize(width: 50, height: 50),
             scrollDirection: .vertical,
             cellType: NumberPickerCell.self
@@ -28,17 +28,7 @@ class ViewController: UIViewController {
         return picker
     }()
     
-    private let viewModel: ViewModel
-    private let disposeBag = DisposeBag()
-    
-    init(viewModel: ViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    @IBOutlet weak var numberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,12 +49,16 @@ class ViewController: UIViewController {
         
     }
 
+    @IBAction func update(_ sender: Any) {
+        numberPicker.pick(at: Int.random(in: 0 ..< 9))
+    }
+    
 }
 
-extension ViewController: RxInfinitePickerDelegate {
+extension CustomizedViewController: InfinitePickerDelegate {
     
     func didSelectItem(at index: Int) {
-        print("didSelectItem \(index)")
+        numberLabel.text = "didSelectItem \(index)"
     }
     
 }

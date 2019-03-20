@@ -1,11 +1,11 @@
 
 import UIKit
 
-open class RxInfinitePickerCell<Model>: UICollectionViewCell {
+open class InfinitePickerCell<Model>: UICollectionViewCell {
     open var model: Model?
 }
 
-public class LabelPickerCell: RxInfinitePickerCell<String> {
+public class LabelPickerCell: InfinitePickerCell<String> {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()

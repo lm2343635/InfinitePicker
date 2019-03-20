@@ -10,11 +10,12 @@
 		1882EE6C799D18B61AAFA4AF /* Pods_RxInfinitePicker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339BA84A3146FE6F181E7748 /* Pods_RxInfinitePicker_Example.framework */; };
 		193F04ECE0C097F36B4EE497 /* Pods_RxInfinitePicker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31DD50DAA759758751F8A3 /* Pods_RxInfinitePicker_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
+		607FACD81AFB9204008FA782 /* CustomizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* CustomizedViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7748F883224228D00038A33F /* BehaviorRelay+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748F882224228D00038A33F /* BehaviorRelay+Extension.swift */; };
+		7748F885224232E00038A33F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7748F884224232E00038A33F /* Main.storyboard */; };
 		77C0746B223BA33E00D9AA12 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0746A223BA33E00D9AA12 /* ViewModel.swift */; };
 		77C0746E223BAD6400D9AA12 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0746D223BAD6400D9AA12 /* PickerCell.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +41,7 @@
 		607FACD01AFB9204008FA782 /* RxInfinitePicker_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxInfinitePicker_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		607FACD71AFB9204008FA782 /* CustomizedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedViewController.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* RxInfinitePicker_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxInfinitePicker_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +49,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		7185B8D7EBA9C6D227414A25 /* Pods-RxInfinitePicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInfinitePicker_Example.release.xcconfig"; path = "Target Support Files/Pods-RxInfinitePicker_Example/Pods-RxInfinitePicker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		7748F882224228D00038A33F /* BehaviorRelay+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Extension.swift"; sourceTree = "<group>"; };
+		7748F884224232E00038A33F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		77C0746A223BA33E00D9AA12 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		77C0746D223BAD6400D9AA12 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		C43D019BAAF4F1BEEEE8D98D /* Pods-RxInfinitePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInfinitePicker_Tests.release.xcconfig"; path = "Target Support Files/Pods-RxInfinitePicker_Tests/Pods-RxInfinitePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,11 +110,12 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				7748F882224228D00038A33F /* BehaviorRelay+Extension.swift */,
-				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				607FACD71AFB9204008FA782 /* CustomizedViewController.swift */,
 				77C0746A223BA33E00D9AA12 /* ViewModel.swift */,
 				77C0746D223BAD6400D9AA12 /* PickerCell.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				7748F884224232E00038A33F /* Main.storyboard */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for RxInfinitePicker";
@@ -252,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7748F885224232E00038A33F /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -377,7 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7748F883224228D00038A33F /* BehaviorRelay+Extension.swift in Sources */,
-				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				607FACD81AFB9204008FA782 /* CustomizedViewController.swift in Sources */,
 				77C0746E223BAD6400D9AA12 /* PickerCell.swift in Sources */,
 				77C0746B223BA33E00D9AA12 /* ViewModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
