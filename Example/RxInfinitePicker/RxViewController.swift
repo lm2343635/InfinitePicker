@@ -26,6 +26,16 @@ class RxViewController: UIViewController {
     }()
     
     private lazy var numberLabel = UILabel()
+    
+    private lazy var updateButton: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(.blue, for: .normal)
+        button.setTitle("Update Randomly", for: .normal)
+        button.rx.tap.bind { [unowned self] in
+            self.viewModel.update()
+        }.disposed(by: disposeBag)
+        return button
+    }()
 
     private let viewModel = RxViewModel()
     private let disposeBag = DisposeBag()
@@ -35,12 +45,16 @@ class RxViewController: UIViewController {
         
         view.addSubview(numberPicker)
         view.addSubview(numberLabel)
+        view.addSubview(updateButton)
         createConstraints()
         
         viewModel.items.bind(to: numberPicker.rx.items).disposed(by: disposeBag)
+        viewModel.selectedIndex.bind(to: numberPicker.rx.selectedIndex).disposed(by: disposeBag)
+        viewModel.number.bind(to: numberLabel.rx.text).disposed(by: disposeBag)
     }
     
     private func createConstraints() {
+        
         numberPicker.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(CGSize(width: 50, height: 200))
@@ -50,6 +64,12 @@ class RxViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(numberPicker.snp.bottom).offset(30)
         }
+        
+        updateButton.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(numberLabel.snp.bottom).offset(30)
+        }
+        
     }
     
 }

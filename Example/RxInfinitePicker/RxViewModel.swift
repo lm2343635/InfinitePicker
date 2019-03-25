@@ -12,15 +12,18 @@ import RxCocoa
 class RxViewModel {
     
     let items = BehaviorRelay<[Int]>(value: Array(1 ... 9))
-    let selectedIndex = BehaviorRelay<Int>(value: 0)
+    let selectedIndex = PublishSubject<Int>()
     
-    var itemsString: Observable<[String]> {
-        return items.map { $0.map { String($0) } }
+    var number: Observable<String?> {
+        return selectedIndex.map { String($0) }
     }
     
     func pick(at index: Int) {
         print("itemSelected \(index)")
     }
     
-
+    func update() {
+        selectedIndex.onNext(Int.random(in: 0 ..< 9))
+    }
+    
 }
