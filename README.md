@@ -1,9 +1,9 @@
 # RxInfinitePicker
 
-[![CI Status](https://img.shields.io/travis/lm2343635/RxInfinitePicker.svg?style=flat)](https://travis-ci.org/lm2343635/RxInfinitePicker)
-[![Version](https://img.shields.io/cocoapods/v/RxInfinitePicker.svg?style=flat)](https://cocoapods.org/pods/RxInfinitePicker)
-[![License](https://img.shields.io/cocoapods/l/RxInfinitePicker.svg?style=flat)](https://cocoapods.org/pods/RxInfinitePicker)
-[![Platform](https://img.shields.io/cocoapods/p/RxInfinitePicker.svg?style=flat)](https://cocoapods.org/pods/RxInfinitePicker)
+[![CI Status](https://img.shields.io/travis/lm2343635/InfinitePicker.svg?style=flat)](https://travis-ci.org/lm2343635/RxInfinitePicker)
+[![Version](https://img.shields.io/cocoapods/v/InfinitePicker.svg?style=flat)](https://cocoapods.org/pods/InfinitePicker)
+[![License](https://img.shields.io/cocoapods/l/InfinitePicker.svg?style=flat)](https://cocoapods.org/pods/InfinitePicker)
+[![Platform](https://img.shields.io/cocoapods/p/InfinitePicker.svg?style=flat)](https://cocoapods.org/pods/InfinitePicker)
 
 `InfinitePicker` is an customized infinite picker for iOS, it helps you to create a infinite picker using a customized cell.
 `InfinitePicker` also supports using with the `RxSwift` (https://github.com/ReactiveX/RxSwift) extension.
