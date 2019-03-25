@@ -19,11 +19,13 @@ class RxViewController: UIViewController {
             scrollDirection: .vertical,
             cellType: NumberPickerCell.self
         )
-//        picker.rx.itemSelected.subscribe(onNext: { [unowned self] in
-//            print("itemSelected \($0)")
-//        }).disposed(by: disposeBag)
+        picker.rx.itemSelected.subscribe(onNext: { [unowned self] in
+            self.viewModel.pick(at: $0)
+        }).disposed(by: disposeBag)
         return picker
     }()
+    
+    private lazy var numberLabel = UILabel()
 
     private let viewModel = RxViewModel()
     private let disposeBag = DisposeBag()
@@ -32,13 +34,21 @@ class RxViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(numberPicker)
+        view.addSubview(numberLabel)
         createConstraints()
+        
+        viewModel.items.bind(to: numberPicker.rx.items).disposed(by: disposeBag)
     }
     
     private func createConstraints() {
         numberPicker.snp.makeConstraints {
             $0.center.equalToSuperview()
             $0.size.equalTo(CGSize(width: 50, height: 200))
+        }
+        
+        numberLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(numberPicker.snp.bottom).offset(30)
         }
     }
     

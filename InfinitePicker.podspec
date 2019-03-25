@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'InfinitePicker'
-  s.version          = '0.1'
+  s.version          = '0.2'
   s.summary          = 'An iOS infinite picker based on RxSwift.'
 
 # This description is used to generate tags and improve search results.
@@ -36,6 +36,7 @@ RxInfinitePicker is an iOS infinite picker based on RxSwift, it helps you to cre
   end
   
   s.subspec 'Rx' do |rx|
+    rx.dependency 'InfinitePicker/Core', '~> 0'
     rx.dependency 'RxCocoa', '~> 4.2'
     rx.source_files = 'InfinitePicker/Classes/Rx/**/*'
   end

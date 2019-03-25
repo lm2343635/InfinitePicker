@@ -18,5 +18,9 @@ class RxViewModel {
         return items.map { $0.map { String($0) } }
     }
     
+    func pick(at index: Int) {
+        print("itemSelected \(index)")
+    }
+    
 
 }

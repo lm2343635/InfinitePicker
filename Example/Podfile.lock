@@ -5,8 +5,11 @@ PODS:
     - InfiniteLayout/Core (= 0.2.3.4)
   - InfiniteLayout/Core (0.2.3.4):
     - CocoaProxy (~> 0)
+  - InfinitePicker/Core (0.1):
+    - InfiniteLayout (~> 0.2)
   - InfinitePicker/Rx (0.1):
     - InfiniteLayout (~> 0.2)
+    - InfinitePicker/Core (~> 0)
     - RxCocoa (~> 4.2)
   - RxAtomic (4.4.2)
   - RxCocoa (4.4.2):
@@ -40,7 +43,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   CocoaProxy: 35ab81e24325b33834cffe45a3d1fd48ca67ef3a
   InfiniteLayout: 0a2d22c0d7c12051468b1bd1763875285f2e6815
-  InfinitePicker: 1646bb660f3ff771234694b6168b9d700bf7aeeb
+  InfinitePicker: 18f3adb2c8038dd3285d20c45a000348bf157334
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649

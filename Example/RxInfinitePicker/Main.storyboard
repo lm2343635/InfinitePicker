@@ -90,8 +90,8 @@
                                     <action selector="update:" destination="GqG-Ed-YxZ" eventType="touchUpInside" id="pPz-60-f8z"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UfE-vt-FzL">
-                                <rect key="frame" x="162" y="233" width="50" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfE-vt-FzL">
+                                <rect key="frame" x="162.5" y="265.5" width="50" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="NLZ-kk-gN8"/>
@@ -110,7 +110,9 @@
                             <constraint firstItem="3nS-yg-oby" firstAttribute="centerX" secondItem="lOi-ZT-cAW" secondAttribute="centerX" id="BNs-4X-YK0"/>
                             <constraint firstItem="lOi-ZT-cAW" firstAttribute="bottom" secondItem="Y2y-A4-rEx" secondAttribute="bottom" constant="20" id="Gq4-4d-5NO"/>
                             <constraint firstItem="Y2y-A4-rEx" firstAttribute="top" secondItem="3nS-yg-oby" secondAttribute="bottom" constant="8" id="H3l-kx-wT0"/>
+                            <constraint firstItem="UfE-vt-FzL" firstAttribute="centerY" secondItem="lOi-ZT-cAW" secondAttribute="centerY" id="YIs-34-LNB"/>
                             <constraint firstItem="Y2y-A4-rEx" firstAttribute="centerX" secondItem="lOi-ZT-cAW" secondAttribute="centerX" id="nWW-qi-uFG"/>
+                            <constraint firstItem="UfE-vt-FzL" firstAttribute="centerX" secondItem="lOi-ZT-cAW" secondAttribute="centerX" id="rx2-Ot-s7c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lOi-ZT-cAW"/>
                     </view>
@@ -142,7 +144,7 @@
         <!--Rx-->
         <scene sceneID="KrZ-9B-LAe">
             <objects>
-                <viewController id="FdG-dK-Nm4" customClass="CustomizedViewController" customModule="RxInfinitePicker_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FdG-dK-Nm4" customClass="RxViewController" customModule="RxInfinitePicker_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ofo-E8-o1y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
