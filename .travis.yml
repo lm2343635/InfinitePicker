@@ -13,4 +13,4 @@ before_install:
 - pod install --project-directory=Example
 
 script:
-- set -o pipefail && xcodebuild -workspace Example/InfinitePicker.xcworkspace -scheme InfinitePicker-Example -sdk iphonesimulator build CODE_SIGNING_REQUIRED=NO | xcpretty -c
+- set -o pipefail && xcodebuild -workspace Example/InfinitePicker.xcworkspace -scheme InfinitePicker_Example -sdk iphonesimulator build CODE_SIGNING_REQUIRED=NO | xcpretty -c
