@@ -5,8 +5,8 @@
 [![License](https://img.shields.io/cocoapods/l/RxInfinitePicker.svg?style=flat)](https://cocoapods.org/pods/RxInfinitePicker)
 [![Platform](https://img.shields.io/cocoapods/p/RxInfinitePicker.svg?style=flat)](https://cocoapods.org/pods/RxInfinitePicker)
 
-`RxInfinitePicker` is an iOS infinite picker based on RxSwift, it helps you to create a infinite picker using a customized cell.
-Using `RxInfinitePicker` requires the base `RxSwift` (https://github.com/ReactiveX/RxSwift) knowledge.
+`InfinitePicker` is an customized infinite picker for iOS, it helps you to create a infinite picker using a customized cell.
+`InfinitePicker` also supports using with the `RxSwift` (https://github.com/ReactiveX/RxSwift) extension.
 
 ## Example
 
@@ -14,21 +14,21 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Documentation
 
-RxInfinitePicker is available through [CocoaPods](https://cocoapods.org). To install
+InfinitePicker is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'RxInfinitePicker'
+pod 'InfinitePicker'
 ```
 
 #### Customized cell
 
 The following code is a demo of a customized cell.
-A customized cell class `NumberPickerCell` is a subclass of the generic class RxInfinitePickerCell.
+A customized cell class `NumberPickerCell` is a subclass of the generic class InfinitePickerCell.
 `Int` is the model type of this customized cell.
 
 ```Swift
-class NumberPickerCell: RxInfinitePickerCell<Int> {
+class NumberPickerCell: InfinitePickerCell<Int> {
     
     private lazy var numberLabel: UILabel = {
         let label = UILabel()
@@ -63,7 +63,7 @@ class NumberPickerCell: RxInfinitePickerCell<Int> {
 }
 ```
 
-#### Using RxInfinitePicker
+#### Using InfinitePicker
 
 Create a picker in your view controller class.
 The generic type must be same as which in your customized class.
@@ -75,24 +75,42 @@ private lazy var numberPicker: RxInfinitePicker<Int> = {
         scrollDirection: .vertical,
         cellType: NumberPickerCell.self
     )
-    picker.itemSelected.subscribe(onNext: { [unowned self] in
-        print("itemSelected \($0)")
-    }).disposed(by: disposeBag)
+    picker.delegate = self
     return picker
 }()
 ```
 
-Bind your data to the picker.
+Set your data to the picker. 
+
 ```Swift
 override func viewDidLoad() {
     super.viewDidLoad()
     //...
 
-    viewModel.items.bind(to: numberPicker.items).disposed(by: disposeBag)
+    numberPicker.items = Array(1 ... 9)
 }
 ```
 
-After scrolling or selecting a new item, the `itemSelected` signal that contains the selected model  will be updated.
+Get the selected item in the delegate `InfinitePickerDelegate`.
+
+```Swift
+extension CustomizedViewController: InfinitePickerDelegate {
+    func didSelectItem(at index: Int) {
+        numberLabel.text = "didSelectItem \(index)"
+    }
+}
+```
+
+#### Using with the RxSwift extension.
+
+```Swift
+picker.rx.itemSelected.subscribe(onNext: { [unowned self] in
+    self.viewModel.pick(at: $0)
+}).disposed(by: disposeBag)
+
+viewModel.items.bind(to: picker.rx.items).disposed(by: disposeBag)
+viewModel.selectedIndex.bind(to: picker.rx.selectedIndex).disposed(by: disposeBag)
+```
 
 ## Author
 
@@ -100,4 +118,4 @@ lm2343635, lm2343635@126.com
 
 ## License
 
-RxInfinitePicker is available under the MIT license. See the LICENSE file for more info.
+InfinitePicker is available under the MIT license. See the LICENSE file for more info.
