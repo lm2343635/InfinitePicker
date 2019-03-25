@@ -1,14 +1,10 @@
 use_frameworks!
 platform :ios, '9.0'
 
-target 'RxInfinitePicker_Example' do
+target 'InfinitePicker_Example' do
   pod 'InfinitePicker/Rx', :path => '../'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'SnapKit'
   pod 'ShapeView'
-
-  target 'RxInfinitePicker_Tests' do
-    inherit! :search_paths
-  end
 end

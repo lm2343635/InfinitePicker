@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1882EE6C799D18B61AAFA4AF /* Pods_RxInfinitePicker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339BA84A3146FE6F181E7748 /* Pods_RxInfinitePicker_Example.framework */; };
-		193F04ECE0C097F36B4EE497 /* Pods_RxInfinitePicker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F31DD50DAA759758751F8A3 /* Pods_RxInfinitePicker_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* CustomizedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* CustomizedViewController.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
@@ -19,6 +17,7 @@
 		7748F889224241220038A33F /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7748F888224241220038A33F /* RxViewController.swift */; };
 		77C0746B223BA33E00D9AA12 /* RxViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0746A223BA33E00D9AA12 /* RxViewModel.swift */; };
 		77C0746E223BAD6400D9AA12 /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C0746D223BAD6400D9AA12 /* PickerCell.swift */; };
+		98615128B73AD28F3EA4E395 /* Pods_InfinitePicker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B4952D0E527667877AD3AB9 /* Pods_InfinitePicker_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,26 +31,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F31DD50DAA759758751F8A3 /* Pods_RxInfinitePicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxInfinitePicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		339BA84A3146FE6F181E7748 /* Pods_RxInfinitePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxInfinitePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		506A55F2E0AE96434C779C67 /* Pods-RxInfinitePicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInfinitePicker_Tests.debug.xcconfig"; path = "Target Support Files/Pods-RxInfinitePicker_Tests/Pods-RxInfinitePicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5FE0FCB1674B99C9A625B29B /* Pods-RxInfinitePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInfinitePicker_Example.debug.xcconfig"; path = "Target Support Files/Pods-RxInfinitePicker_Example/Pods-RxInfinitePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* RxInfinitePicker_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxInfinitePicker_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43E93B04A45741B907819D71 /* Pods-InfinitePicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfinitePicker_Example.debug.xcconfig"; path = "Target Support Files/Pods-InfinitePicker_Example/Pods-InfinitePicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		607FACD01AFB9204008FA782 /* InfinitePicker_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfinitePicker_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* CustomizedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedViewController.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* RxInfinitePicker_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxInfinitePicker_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACE51AFB9204008FA782 /* InfinitePicker_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfinitePicker_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7185B8D7EBA9C6D227414A25 /* Pods-RxInfinitePicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInfinitePicker_Example.release.xcconfig"; path = "Target Support Files/Pods-RxInfinitePicker_Example/Pods-RxInfinitePicker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		7748F882224228D00038A33F /* BehaviorRelay+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+Extension.swift"; sourceTree = "<group>"; };
 		7748F884224232E00038A33F /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7748F888224241220038A33F /* RxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
 		77C0746A223BA33E00D9AA12 /* RxViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewModel.swift; sourceTree = "<group>"; };
 		77C0746D223BAD6400D9AA12 /* PickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
-		C43D019BAAF4F1BEEEE8D98D /* Pods-RxInfinitePicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxInfinitePicker_Tests.release.xcconfig"; path = "Target Support Files/Pods-RxInfinitePicker_Tests/Pods-RxInfinitePicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		7B4952D0E527667877AD3AB9 /* Pods_InfinitePicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfinitePicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC59B583AB03BC3D7EC4DDC3 /* Pods-InfinitePicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfinitePicker_Example.release.xcconfig"; path = "Target Support Files/Pods-InfinitePicker_Example/Pods-InfinitePicker_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1882EE6C799D18B61AAFA4AF /* Pods_RxInfinitePicker_Example.framework in Frameworks */,
+				98615128B73AD28F3EA4E395 /* Pods_InfinitePicker_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				193F04ECE0C097F36B4EE497 /* Pods_RxInfinitePicker_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,8 +72,7 @@
 		07AF2E302DB4B1CFA89D099C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				339BA84A3146FE6F181E7748 /* Pods_RxInfinitePicker_Example.framework */,
-				1F31DD50DAA759758751F8A3 /* Pods_RxInfinitePicker_Tests.framework */,
+				7B4952D0E527667877AD3AB9 /* Pods_InfinitePicker_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,8 +91,8 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* RxInfinitePicker_Example.app */,
-				607FACE51AFB9204008FA782 /* RxInfinitePicker_Tests.xctest */,
+				607FACD01AFB9204008FA782 /* InfinitePicker_Example.app */,
+				607FACE51AFB9204008FA782 /* InfinitePicker_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,10 +159,8 @@
 		7E5E7BF4960E5E1113CEC234 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5FE0FCB1674B99C9A625B29B /* Pods-RxInfinitePicker_Example.debug.xcconfig */,
-				7185B8D7EBA9C6D227414A25 /* Pods-RxInfinitePicker_Example.release.xcconfig */,
-				506A55F2E0AE96434C779C67 /* Pods-RxInfinitePicker_Tests.debug.xcconfig */,
-				C43D019BAAF4F1BEEEE8D98D /* Pods-RxInfinitePicker_Tests.release.xcconfig */,
+				43E93B04A45741B907819D71 /* Pods-InfinitePicker_Example.debug.xcconfig */,
+				DC59B583AB03BC3D7EC4DDC3 /* Pods-InfinitePicker_Example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -176,31 +168,30 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		607FACCF1AFB9204008FA782 /* RxInfinitePicker_Example */ = {
+		607FACCF1AFB9204008FA782 /* InfinitePicker_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "RxInfinitePicker_Example" */;
+			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "InfinitePicker_Example" */;
 			buildPhases = (
-				95B43C79973C91EBF660DA76 /* [CP] Check Pods Manifest.lock */,
+				3CF3A115AA23EBB85BE4AC0C /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				77C0746C223BA7E600D9AA12 /* Rebuild Pods */,
-				901BE2BECAEAE6ABAC74CF09 /* [CP] Embed Pods Frameworks */,
+				7751E8A122488CCE00B4C41A /* Rebuild Pods */,
+				AD8525662CF6B9918B0A0050 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RxInfinitePicker_Example;
+			name = InfinitePicker_Example;
 			productName = RxInfinitePicker;
-			productReference = 607FACD01AFB9204008FA782 /* RxInfinitePicker_Example.app */;
+			productReference = 607FACD01AFB9204008FA782 /* InfinitePicker_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		607FACE41AFB9204008FA782 /* RxInfinitePicker_Tests */ = {
+		607FACE41AFB9204008FA782 /* InfinitePicker_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "RxInfinitePicker_Tests" */;
+			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "InfinitePicker_Tests" */;
 			buildPhases = (
-				C56C3D2B87C64993E2FE41CB /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -210,9 +201,9 @@
 			dependencies = (
 				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
 			);
-			name = RxInfinitePicker_Tests;
+			name = InfinitePicker_Tests;
 			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* RxInfinitePicker_Tests.xctest */;
+			productReference = 607FACE51AFB9204008FA782 /* InfinitePicker_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -227,6 +218,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 6ANM44X2CJ;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -236,7 +228,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "RxInfinitePicker" */;
+			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "InfinitePicker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -249,8 +241,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				607FACCF1AFB9204008FA782 /* RxInfinitePicker_Example */,
-				607FACE41AFB9204008FA782 /* RxInfinitePicker_Tests */,
+				607FACCF1AFB9204008FA782 /* InfinitePicker_Example */,
+				607FACE41AFB9204008FA782 /* InfinitePicker_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -276,7 +268,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		77C0746C223BA7E600D9AA12 /* Rebuild Pods */ = {
+		3CF3A115AA23EBB85BE4AC0C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InfinitePicker_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7751E8A122488CCE00B4C41A /* Rebuild Pods */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -294,7 +308,7 @@
 			shellPath = /bin/sh;
 			shellScript = "find \"${SRCROOT}/Pods\" -type f -name *frameworks.sh -exec bash -c \"touch \\\"{}\\\"\" \\;\n";
 		};
-		901BE2BECAEAE6ABAC74CF09 /* [CP] Embed Pods Frameworks */ = {
+		AD8525662CF6B9918B0A0050 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -302,7 +316,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RxInfinitePicker_Example/Pods-RxInfinitePicker_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-InfinitePicker_Example/Pods-InfinitePicker_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CocoaProxy/CocoaProxy.framework",
 				"${BUILT_PRODUCTS_DIR}/InfiniteLayout/InfiniteLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/InfinitePicker/InfinitePicker.framework",
@@ -327,51 +341,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxInfinitePicker_Example/Pods-RxInfinitePicker_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		95B43C79973C91EBF660DA76 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxInfinitePicker_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C56C3D2B87C64993E2FE41CB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxInfinitePicker_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InfinitePicker_Example/Pods-InfinitePicker_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -403,7 +373,7 @@
 /* Begin PBXTargetDependency section */
 		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* RxInfinitePicker_Example */;
+			target = 607FACCF1AFB9204008FA782 /* InfinitePicker_Example */;
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -527,14 +497,15 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FE0FCB1674B99C9A625B29B /* Pods-RxInfinitePicker_Example.debug.xcconfig */;
+			baseConfigurationReference = 43E93B04A45741B907819D71 /* Pods-InfinitePicker_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6ANM44X2CJ;
 				INFOPLIST_FILE = RxInfinitePicker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.InfinitePicker-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
@@ -543,14 +514,15 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7185B8D7EBA9C6D227414A25 /* Pods-RxInfinitePicker_Example.release.xcconfig */;
+			baseConfigurationReference = DC59B583AB03BC3D7EC4DDC3 /* Pods-InfinitePicker_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6ANM44X2CJ;
 				INFOPLIST_FILE = RxInfinitePicker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.InfinitePicker-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
@@ -559,7 +531,6 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 506A55F2E0AE96434C779C67 /* Pods-RxInfinitePicker_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -575,13 +546,12 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxInfinitePicker_Example.app/RxInfinitePicker_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InfinitePicker_Example.app/InfinitePicker_Example";
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C43D019BAAF4F1BEEEE8D98D /* Pods-RxInfinitePicker_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -593,14 +563,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxInfinitePicker_Example.app/RxInfinitePicker_Example";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InfinitePicker_Example.app/InfinitePicker_Example";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "RxInfinitePicker" */ = {
+		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "InfinitePicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACED1AFB9204008FA782 /* Debug */,
@@ -609,7 +579,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "RxInfinitePicker_Example" */ = {
+		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "InfinitePicker_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
@@ -618,7 +588,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "RxInfinitePicker_Tests" */ = {
+		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "InfinitePicker_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				607FACF31AFB9204008FA782 /* Debug */,
