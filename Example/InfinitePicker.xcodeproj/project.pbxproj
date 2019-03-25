@@ -80,7 +80,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				607FACD21AFB9204008FA782 /* Example for RxInfinitePicker */,
+				607FACD21AFB9204008FA782 /* Example for InfinitePicker */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				7E5E7BF4960E5E1113CEC234 /* Pods */,
@@ -97,7 +97,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* Example for RxInfinitePicker */ = {
+		607FACD21AFB9204008FA782 /* Example for InfinitePicker */ = {
 			isa = PBXGroup;
 			children = (
 				7748F887224241090038A33F /* Cell */,
@@ -109,8 +109,8 @@
 				7748F884224232E00038A33F /* Main.storyboard */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
-			name = "Example for RxInfinitePicker";
-			path = RxInfinitePicker;
+			name = "Example for InfinitePicker";
+			path = InfinitePicker;
 			sourceTree = "<group>";
 		};
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
@@ -184,7 +184,7 @@
 			dependencies = (
 			);
 			name = InfinitePicker_Example;
-			productName = RxInfinitePicker;
+			productName = InfinitePicker;
 			productReference = 607FACD01AFB9204008FA782 /* InfinitePicker_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -501,7 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6ANM44X2CJ;
-				INFOPLIST_FILE = RxInfinitePicker/Info.plist;
+				INFOPLIST_FILE = InfinitePicker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
