@@ -110,6 +110,8 @@ public class InfinitePicker<Model>: UIControl, UICollectionViewDataSource, UICol
             return .centeredVertically
         case .horizontal:
             return .centeredHorizontally
+        @unknown default:
+            return .centeredVertically
         }
     }
     
@@ -131,7 +133,6 @@ public class InfinitePicker<Model>: UIControl, UICollectionViewDataSource, UICol
         guard
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.pickerCellIdentider, for: indexPath) as? InfinitePickerCell<Model>,
             0 ..< items.count ~= index
-            
         else {
             return UICollectionViewCell()
         }

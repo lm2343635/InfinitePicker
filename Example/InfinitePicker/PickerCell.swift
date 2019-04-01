@@ -62,7 +62,7 @@ class NumberPickerCell: InfinitePickerCell<Int> {
         view.path = .corner(radius: Const.number.size / 2) { [unowned view] in
             return view.bounds
         }
-        view.innerShadow = ShapeShadow(raduis: 4, color: .white, opacity: 0.5)
+        view.innerShadow = ShapeShadow(radius: 4, color: .white, opacity: 0.5)
         view.addSubview(numberLabel)
         return view
     }()

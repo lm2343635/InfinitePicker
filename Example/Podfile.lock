@@ -1,9 +1,9 @@
 PODS:
   - CocoaProxy (0.1.1)
-  - InfiniteLayout (0.2.3.4):
+  - InfiniteLayout (0.3):
     - CocoaProxy (~> 0)
-    - InfiniteLayout/Core (= 0.2.3.4)
-  - InfiniteLayout/Core (0.2.3.4):
+    - InfiniteLayout/Core (= 0.3)
+  - InfiniteLayout/Core (0.3):
     - CocoaProxy (~> 0)
   - InfinitePicker/Core (0.2):
     - InfiniteLayout (~> 0.2)
@@ -16,7 +16,7 @@ PODS:
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
-  - ShapeView (0.4.2)
+  - ShapeView (0.5)
   - SnapKit (4.2.0)
 
 DEPENDENCIES:
@@ -42,12 +42,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CocoaProxy: 35ab81e24325b33834cffe45a3d1fd48ca67ef3a
-  InfiniteLayout: 0a2d22c0d7c12051468b1bd1763875285f2e6815
+  InfiniteLayout: 24d5e5ea1528bb86ee00a4e3c02f93fdb38e3f68
   InfinitePicker: 9471cc9cb617b230b2339924bad1ef484431f137
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
-  ShapeView: 6be862212ffe328d2ca968a61968ed5e104fabba
+  ShapeView: dd29d7d5af9c477d2ec32b0a8abc09d46679ff99
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
 PODFILE CHECKSUM: df01c8610423f2e8e12500c333b131eac55a4dc5
