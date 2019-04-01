@@ -51,6 +51,7 @@ public class InfinitePicker<Model>: UIControl,
     private let cellType: InfinitePickerCell<Model>.Type
     
     var currentIndex = 0
+    var selectedIndex = 0
     
     private lazy var gesture: UIPanGestureRecognizer = {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(gestureRecognizer(_:)))
@@ -131,10 +132,8 @@ public class InfinitePicker<Model>: UIControl,
     
     @objc private func gestureRecognizer(_ sender: UIGestureRecognizer) {
         switch sender.state {
-        case .began:
-            print("Start")
         case .ended, .cancelled, .failed:
-            print("End")
+            delegate?.didSelectItem(at: selectedIndex)
         default:
             break
         }
@@ -168,6 +167,8 @@ public class InfinitePicker<Model>: UIControl,
     // MARK: UICollectionViewDelegate
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: scrollPosition, animated: true)
+        selectedIndex = self.collectionView.indexPath(from: indexPath).row
+        delegate?.didSelectItem(at: selectedIndex)
     }
     
     //  MARK: InfiniteCollectionViewDelegate
@@ -176,7 +177,7 @@ public class InfinitePicker<Model>: UIControl,
             return
         }
         currentIndex = indexPath.row
-        delegate?.didSelectItem(at: collectionView.indexPath(from: indexPath).row)
+        selectedIndex = collectionView.indexPath(from: indexPath).row
     }
     
     // MARK: UIGestureRecognizerDelegate
