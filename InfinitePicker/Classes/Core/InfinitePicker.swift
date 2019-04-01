@@ -41,13 +41,22 @@ public protocol InfinitePickerDelegate: class {
     func didSelectItem(at index: Int)
 }
 
-public class InfinitePicker<Model>: UIControl, UICollectionViewDataSource, UICollectionViewDelegate, InfinitePickerProtocol, InfiniteCollectionViewDelegate {
+public class InfinitePicker<Model>: UIControl,
+    UICollectionViewDataSource, UICollectionViewDelegate,
+    InfinitePickerProtocol, InfiniteCollectionViewDelegate,
+    UIGestureRecognizerDelegate {
 
     private let itemSize: CGSize
     private let scrollDirection: UICollectionView.ScrollDirection
     private let cellType: InfinitePickerCell<Model>.Type
     
     var currentIndex = 0
+    
+    private lazy var gesture: UIPanGestureRecognizer = {
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(gestureRecognizer(_:)))
+        gesture.delegate = self
+        return gesture
+    }()
     
     private lazy var collectionView: InfiniteCollectionView = {
         let collectionView = InfiniteCollectionView(frame: .zero, collectionViewLayout: {
@@ -66,6 +75,7 @@ public class InfinitePicker<Model>: UIControl, UICollectionViewDataSource, UICol
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.infiniteDelegate = self
+        collectionView.addGestureRecognizer(gesture)
         return collectionView
     }()
     
@@ -76,6 +86,10 @@ public class InfinitePicker<Model>: UIControl, UICollectionViewDataSource, UICol
     }
     
     public weak var delegate: InfinitePickerDelegate?
+    
+    deinit {
+        collectionView.removeGestureRecognizer(gesture)
+    }
     
     public init(
         frame: CGRect = .zero,
@@ -112,6 +126,17 @@ public class InfinitePicker<Model>: UIControl, UICollectionViewDataSource, UICol
             return .centeredHorizontally
         @unknown default:
             return .centeredVertically
+        }
+    }
+    
+    @objc private func gestureRecognizer(_ sender: UIGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            print("Start")
+        case .ended, .cancelled, .failed:
+            print("End")
+        default:
+            break
         }
     }
     
@@ -152,6 +177,11 @@ public class InfinitePicker<Model>: UIControl, UICollectionViewDataSource, UICol
         }
         currentIndex = indexPath.row
         delegate?.didSelectItem(at: collectionView.indexPath(from: indexPath).row)
+    }
+    
+    // MARK: UIGestureRecognizerDelegate
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
 }
