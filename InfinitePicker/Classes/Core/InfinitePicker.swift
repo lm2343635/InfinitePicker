@@ -93,6 +93,9 @@ public class InfinitePicker<Model>: UIControl,
     public var items: [Model] = [] {
         didSet {
             collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.cellForItem(at: IndexPath(row: 0, section: 0))?.isSelected = true
+            }
         }
     }
     

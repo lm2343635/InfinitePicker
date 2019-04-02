@@ -73,6 +73,7 @@ private lazy var numberPicker: RxInfinitePicker<Int> = {
     let picker = RxInfinitePicker<Int>(
         itemSize: CGSize(width: 50, height: 50),
         scrollDirection: .vertical,
+        spacing: 10,
         cellType: NumberPickerCell.self
     )
     picker.delegate = self

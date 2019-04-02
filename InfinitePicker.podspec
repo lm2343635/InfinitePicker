@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'InfinitePicker'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'An iOS customized infinite picker.'
 
 # This description is used to generate tags and improve search results.
