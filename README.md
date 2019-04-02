@@ -8,6 +8,11 @@
 `InfinitePicker` is an customized infinite picker for iOS, it helps you to create a infinite picker using a customized cell.
 `InfinitePicker` also supports using with the `RxSwift` (https://github.com/ReactiveX/RxSwift) extension.
 
+<div>
+	<img src="https://raw.githubusercontent.com/lm2343635/InfinitePicker/master/screenshot/demo1.png">
+	<img src="https://raw.githubusercontent.com/lm2343635/InfinitePicker/master/screenshot/demo2.png">
+</div>
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
@@ -26,6 +31,12 @@ pod 'InfinitePicker'
 The following code is a demo of a customized cell.
 A customized cell class `NumberPickerCell` is a subclass of the generic class InfinitePickerCell.
 `Int` is the model type of this customized cell.
+
+The following property shoudl be overrided:
+
+- `model`: Override the model property to set data for the cell.
+- `isSelected`: Override the isSelected property to set a selected effect.
+
 
 ```Swift
 class NumberPickerCell: InfinitePickerCell<Int> {
@@ -49,6 +60,7 @@ class NumberPickerCell: InfinitePickerCell<Int> {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Override the model property to set data for the cell.
     override var model: Int? {
         didSet {
             guard let number = model else {
@@ -57,7 +69,14 @@ class NumberPickerCell: InfinitePickerCell<Int> {
             numberLabel.text = String(number)
         }
     }
-
+    
+    // Override the isSelected property to set a selected effect.
+    override var isSelected: Bool {
+        didSet {
+            numberLabel.textColor = isSelected ? .yellow : . white
+        }
+    }
+    
     // ...
     
 }
