@@ -13,11 +13,11 @@ import SnapKit
 
 class RxViewController: UIViewController {
     
-    private lazy var numberPicker: InfinitePicker<Int> = {
-        let picker = InfinitePicker<Int>(
-            itemSize: CGSize(width: 50, height: 50),
-            scrollDirection: .vertical,
-            cellType: NumberPickerCell.self
+    private lazy var typePicker: InfinitePicker<String> = {
+        let picker = InfinitePicker<String>(
+            itemSize: CGSize(width: 65, height: 22),
+            scrollDirection: .horizontal,
+            cellType: HorizentalPickerCell.self
         )
         picker.rx.itemSelected.subscribe(onNext: { [unowned self] in
             self.viewModel.pick(at: $0)
@@ -43,26 +43,26 @@ class RxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(numberPicker)
+        view.addSubview(typePicker)
         view.addSubview(numberLabel)
         view.addSubview(updateButton)
         createConstraints()
         
-        viewModel.items.bind(to: numberPicker.rx.items).disposed(by: disposeBag)
-        viewModel.selectedIndex.bind(to: numberPicker.rx.selectedIndex).disposed(by: disposeBag)
+        viewModel.items.bind(to: typePicker.rx.items).disposed(by: disposeBag)
+        viewModel.selectedIndex.bind(to: typePicker.rx.selectedIndex).disposed(by: disposeBag)
         viewModel.number.bind(to: numberLabel.rx.text).disposed(by: disposeBag)
     }
     
     private func createConstraints() {
         
-        numberPicker.snp.makeConstraints {
+        typePicker.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.size.equalTo(CGSize(width: 50, height: 200))
+            $0.size.equalTo(CGSize(width: UIScreen.main.bounds.width, height: 22))
         }
         
         numberLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(numberPicker.snp.bottom).offset(30)
+            $0.top.equalTo(typePicker.snp.bottom).offset(30)
         }
         
         updateButton.snp.makeConstraints {
