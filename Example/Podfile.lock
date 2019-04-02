@@ -1,13 +1,16 @@
 PODS:
+  - AlignedCollectionViewFlowLayout (1.1.2)
   - CocoaProxy (0.1.1)
   - InfiniteLayout (0.3):
     - CocoaProxy (~> 0)
     - InfiniteLayout/Core (= 0.3)
   - InfiniteLayout/Core (0.3):
     - CocoaProxy (~> 0)
-  - InfinitePicker/Core (0.2):
+  - InfinitePicker/Core (0.2.1):
+    - AlignedCollectionViewFlowLayout (~> 1.1)
     - InfiniteLayout (~> 0.2)
-  - InfinitePicker/Rx (0.2):
+  - InfinitePicker/Rx (0.2.1):
+    - AlignedCollectionViewFlowLayout (~> 1.1)
     - InfiniteLayout (~> 0.2)
     - InfinitePicker/Core (~> 0)
     - RxCocoa (~> 4.2)
@@ -28,6 +31,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AlignedCollectionViewFlowLayout
     - CocoaProxy
     - InfiniteLayout
     - RxAtomic
@@ -41,9 +45,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   CocoaProxy: 35ab81e24325b33834cffe45a3d1fd48ca67ef3a
   InfiniteLayout: 24d5e5ea1528bb86ee00a4e3c02f93fdb38e3f68
-  InfinitePicker: 9471cc9cb617b230b2339924bad1ef484431f137
+  InfinitePicker: a1e7b51755ef0432006e406d43d76ab2f96a77d6
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649

@@ -48,6 +48,7 @@ public class InfinitePicker<Model>: UIControl,
 
     private let itemSize: CGSize
     private let scrollDirection: UICollectionView.ScrollDirection
+    private let spacing: CGFloat
     private let cellType: InfinitePickerCell<Model>.Type
     
     var currentIndex = 0
@@ -62,11 +63,18 @@ public class InfinitePicker<Model>: UIControl,
     private lazy var collectionView: InfiniteCollectionView = {
         let collectionView = InfiniteCollectionView(frame: .zero, collectionViewLayout: {
             let layout = UICollectionViewFlowLayout()
-            layout.minimumLineSpacing = 0
+            layout.minimumLineSpacing = spacing
             layout.minimumInteritemSpacing = 0
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
             layout.itemSize = itemSize
             layout.scrollDirection = scrollDirection
+            switch scrollDirection {
+            case .vertical:
+                layout.sectionInset = UIEdgeInsets(top: spacing, left: 0, bottom: 0, right: 0)
+            case .horizontal:
+                layout.sectionInset = UIEdgeInsets(top: 0, left: spacing, bottom: 0, right: 0)
+            @unknown default:
+                break
+            }
             return layout
         }())
         collectionView.backgroundColor = .clear
@@ -96,10 +104,12 @@ public class InfinitePicker<Model>: UIControl,
         frame: CGRect = .zero,
         itemSize: CGSize,
         scrollDirection: UICollectionView.ScrollDirection,
+        spacing: CGFloat = 0,
         cellType: InfinitePickerCell<Model>.Type
     ) {
         self.itemSize = itemSize
         self.scrollDirection = scrollDirection
+        self.spacing = spacing
         self.cellType = cellType
         super.init(frame: frame)
 

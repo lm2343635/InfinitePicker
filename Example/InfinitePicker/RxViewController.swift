@@ -15,8 +15,9 @@ class RxViewController: UIViewController {
     
     private lazy var typePicker: InfinitePicker<String> = {
         let picker = InfinitePicker<String>(
-            itemSize: CGSize(width: 65, height: 22),
+            itemSize: CGSize(width: 70, height: 30),
             scrollDirection: .horizontal,
+            spacing: 20,
             cellType: HorizentalPickerCell.self
         )
         picker.rx.itemSelected.subscribe(onNext: { [unowned self] in
@@ -57,7 +58,7 @@ class RxViewController: UIViewController {
         
         typePicker.snp.makeConstraints {
             $0.center.equalToSuperview()
-            $0.size.equalTo(CGSize(width: UIScreen.main.bounds.width, height: 22))
+            $0.size.equalTo(CGSize(width: UIScreen.main.bounds.width, height: 50))
         }
         
         numberLabel.snp.makeConstraints {
