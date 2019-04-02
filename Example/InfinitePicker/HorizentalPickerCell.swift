@@ -46,6 +46,12 @@ class HorizentalPickerCell: InfinitePickerCell<String> {
         }
     }
     
+    override var isSelected: Bool {
+        didSet {
+            titleLabel.backgroundColor = isSelected ? .yellow : .lightGray
+        }
+    }
+    
     private func createConstraints() {
         titleLabel.snp.makeConstraints {
             $0.center.equalToSuperview()
