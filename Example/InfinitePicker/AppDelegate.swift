@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  RxInfinitePicker
 //
-//  Created by lm2343635 on 03/15/2019.
-//  Copyright (c) 2019 lm2343635. All rights reserved.
+//  Created by Meng Li on 03/15/2019.
+//  Copyright (c) 2019 MuShare. All rights reserved.
 //
 
 import UIKit
