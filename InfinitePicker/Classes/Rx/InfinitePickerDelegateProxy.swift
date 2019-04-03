@@ -44,6 +44,12 @@ class RxInfinitePickerDelegateProxy<Model>: DelegateProxy<InfinitePicker<Model>,
         }
     }
     
+    static var identifier: UnsafeRawPointer {
+        let objectIdentifier = ObjectIdentifier(InfinitePicker<Model>.self)
+        let integerIdentifier = Int(bitPattern: objectIdentifier)
+        return UnsafeRawPointer(bitPattern: integerIdentifier)!
+    }
+    
     // MARK:- InfinitePickerDelegate
     func didSelectItem(at index: Int) {
         didSelectItemSubject.onNext(index)
