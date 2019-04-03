@@ -19,8 +19,8 @@ class RxViewController: UIViewController {
             scrollDirection: .vertical,
             cellType: NumberPickerCell.self
         )
-        picker.rx.itemSelected.subscribe(onNext: { [unowned self] _ in
-            
+        picker.rx.itemSelected.subscribe(onNext: { [unowned self] in
+            self.viewModel.pickNumber(at: $0)
         }).disposed(by: disposeBag)
         return picker
     }()
@@ -34,7 +34,7 @@ class RxViewController: UIViewController {
         )
         picker.isScrollEnabled = false
         picker.rx.itemSelected.subscribe(onNext: { [unowned self] in
-            self.viewModel.pick(at: $0)
+            self.viewModel.pickType(at: $0)
         }).disposed(by: disposeBag)
         return picker
     }()

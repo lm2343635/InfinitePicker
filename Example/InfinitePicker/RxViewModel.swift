@@ -19,8 +19,12 @@ class RxViewModel {
         return selectedIndex.map { String($0) }
     }
     
-    func pick(at index: Int) {
-        print("itemSelected \(index)")
+    func pickNumber(at index: Int) {
+        print("number itemSelected \(index)")
+    }
+    
+    func pickType(at index: Int) {
+        print("type itemSelected \(index)")
     }
     
     func update() {
