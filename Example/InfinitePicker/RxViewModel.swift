@@ -11,6 +11,7 @@ import RxCocoa
 
 class RxViewModel {
     
+    let numbers = BehaviorRelay<[Int]>(value: Array(1 ... 9))
     let items = BehaviorRelay<[String]>(value: ["wide", "win2", "place2", "win3", "place3"])
     let selectedIndex = PublishSubject<Int>()
     

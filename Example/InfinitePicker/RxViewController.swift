@@ -13,6 +13,18 @@ import SnapKit
 
 class RxViewController: UIViewController {
     
+    private lazy var numberPicker: InfinitePicker<Int> = {
+        let picker = InfinitePicker<Int>(
+            itemSize: CGSize(width: 50, height: 50),
+            scrollDirection: .vertical,
+            cellType: NumberPickerCell.self
+        )
+        picker.rx.itemSelected.subscribe(onNext: { [unowned self] _ in
+            
+        }).disposed(by: disposeBag)
+        return picker
+    }()
+    
     private lazy var typePicker: InfinitePicker<String> = {
         let picker = InfinitePicker<String>(
             itemSize: CGSize(width: 70, height: 30),
@@ -45,17 +57,25 @@ class RxViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(numberPicker)
         view.addSubview(typePicker)
         view.addSubview(numberLabel)
         view.addSubview(updateButton)
         createConstraints()
         
+        viewModel.numbers.bind(to: numberPicker.rx.items).disposed(by: disposeBag)
         viewModel.items.bind(to: typePicker.rx.items).disposed(by: disposeBag)
         viewModel.selectedIndex.bind(to: typePicker.rx.selectedIndex).disposed(by: disposeBag)
         viewModel.number.bind(to: numberLabel.rx.text).disposed(by: disposeBag)
     }
     
     private func createConstraints() {
+        
+        numberPicker.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.size.equalTo(CGSize(width: 50, height: 200))
+            $0.bottom.equalTo(typePicker.snp.top).offset(-20)
+        }
         
         typePicker.snp.makeConstraints {
             $0.center.equalToSuperview()
