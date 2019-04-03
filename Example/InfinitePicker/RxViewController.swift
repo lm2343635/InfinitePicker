@@ -20,6 +20,7 @@ class RxViewController: UIViewController {
             spacing: 20,
             cellType: HorizentalPickerCell.self
         )
+        picker.isScrollEnabled = false
         picker.rx.itemSelected.subscribe(onNext: { [unowned self] in
             self.viewModel.pick(at: $0)
         }).disposed(by: disposeBag)

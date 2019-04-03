@@ -158,6 +158,12 @@ public class InfinitePicker<Model>: UIControl,
         }
     }
     
+    public var isScrollEnabled: Bool = true {
+        didSet {
+            collectionView.isScrollEnabled = isScrollEnabled
+        }
+    }
+    
     public func pick(at index: Int) {
         guard 0 ..< items.count ~= index else {
             return
