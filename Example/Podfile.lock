@@ -1,26 +1,25 @@
 PODS:
-  - AlignedCollectionViewFlowLayout (1.1.2)
   - CocoaProxy (0.1.1)
-  - InfiniteLayout (0.3):
+  - InfiniteLayout (0.4):
     - CocoaProxy (~> 0)
-    - InfiniteLayout/Core (= 0.3)
-  - InfiniteLayout/Core (0.3):
+    - InfiniteLayout/Core (= 0.4)
+  - InfiniteLayout/Core (0.4):
     - CocoaProxy (~> 0)
-  - InfinitePicker/Core (0.2.1):
-    - AlignedCollectionViewFlowLayout (~> 1.1)
+  - InfinitePicker/Core (0.2.6):
     - InfiniteLayout (~> 0.2)
-  - InfinitePicker/Rx (0.2.1):
-    - AlignedCollectionViewFlowLayout (~> 1.1)
+  - InfinitePicker/Rx (0.2.6):
     - InfiniteLayout (~> 0.2)
     - InfinitePicker/Core (~> 0)
-    - RxCocoa (~> 4.2)
-  - RxAtomic (4.4.2)
-  - RxCocoa (4.4.2):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxSwift (4.4.2):
-    - RxAtomic (>= 4.4.2, ~> 4.4)
-  - ShapeView (0.5)
-  - SnapKit (4.2.0)
+    - RxCocoa (~> 5)
+    - RxSwift (~> 5)
+  - RxCocoa (5.0.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - ShapeView (0.6)
+  - SnapKit (5.0.0)
 
 DEPENDENCIES:
   - InfinitePicker/Rx (from `../`)
@@ -31,11 +30,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - AlignedCollectionViewFlowLayout
     - CocoaProxy
     - InfiniteLayout
-    - RxAtomic
     - RxCocoa
+    - RxRelay
     - RxSwift
     - ShapeView
     - SnapKit
@@ -45,16 +43,15 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   CocoaProxy: 35ab81e24325b33834cffe45a3d1fd48ca67ef3a
-  InfiniteLayout: 24d5e5ea1528bb86ee00a4e3c02f93fdb38e3f68
-  InfinitePicker: a1e7b51755ef0432006e406d43d76ab2f96a77d6
-  RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
-  RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
-  RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
-  ShapeView: dd29d7d5af9c477d2ec32b0a8abc09d46679ff99
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  InfiniteLayout: 3d3fd5e97c10ad0aa18bd7c687be0a0ee7289b30
+  InfinitePicker: 484b48fbd6b55e115525846b33e41f98fb2b286e
+  RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
+  RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  ShapeView: bc9816f61b15d1069513826745c0b9c135826035
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
 
-PODFILE CHECKSUM: df01c8610423f2e8e12500c333b131eac55a4dc5
+PODFILE CHECKSUM: cedf19dee7c67160700e08abe6f9bb87f36731ff
 
 COCOAPODS: 1.6.1
